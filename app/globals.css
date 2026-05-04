@@ -1,0 +1,95 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Geist', 'Geist Fallback';
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  
+  /* Color tokens - Education theme */
+  --color-background: #ffffff;
+  --color-foreground: #0f172a;
+  --color-primary: #2563eb; /* Vibrant blue */
+  --color-primary-dark: #1e40af;
+  --color-primary-light: #60a5fa;
+  --color-secondary: #7c3aed; /* Purple accent */
+  --color-accent: #10b981; /* Green for success */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-destructive: #ef4444;
+  --color-muted: #f1f5f9;
+  --color-muted-foreground: #64748b;
+  --color-border: #e2e8f0;
+  --color-input: #f8fafc;
+  --color-ring: #2563eb;
+  
+  --radius: 0.5rem;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 215 28% 17%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 28% 17%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 28% 17%;
+    --muted: 214 32% 91%;
+    --muted-foreground: 215 14% 34%;
+    --accent: 10 100% 44%;
+    --destructive: 0 84% 60%;
+    --border: 214 33% 89%;
+    --input: 214 35% 98%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 124 39% 58%;
+    --secondary-foreground: 210 40% 98%;
+    --ring: 217 91% 60%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222 84% 5%;
+    --foreground: 213 31% 91%;
+    --card: 222 84% 5%;
+    --card-foreground: 213 31% 91%;
+    --popover: 222 84% 5%;
+    --popover-foreground: 213 31% 91%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 14% 66%;
+    --accent: 10 100% 44%;
+    --destructive: 0 84% 60%;
+    --border: 217 33% 17%;
+    --input: 217 33% 13%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 124 39% 58%;
+    --secondary-foreground: 213 31% 9%;
+    --ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/70;
+}
